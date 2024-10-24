@@ -1,0 +1,58 @@
+###########
+# site.title, site.url, site.author.name
+
+title:   'Junmo Kwon, Ph.D.'
+author:
+  name:  'Junmo Kwon'
+profile: './assets/images/jmkwon.jpg'
+desc: |
+  Postdoctoral Research Fellow at [**MIP Lab**](https://mipskku.wixsite.com/mipl)
+  
+  Department of Electrical and Computer Engineering
+  
+  Sungkyunkwan University, Republic of Korea
+  
+  [**Curriculum Vitae**](./assets/documents/CV_Junmo_Kwon.pdf?raw=true) & [**Google Scholar**](https://scholar.google.com/citations?user=-c-f1CoAAAAJ&hl=en)
+
+research:
+  title: 'Research Interest'
+  desc: >
+    My research focuses on integrating machine learning into medical image computing to tackle challenges such as data scarcity and class imbalance. I leverage self-supervised learning techniques, including contrastive and auxiliary learning, to address these issues.
+
+news:
+  title: 'News'
+  entries:
+    - desc: (10/2024) One paper accepted to <strong>BIBM 2024!</strong>
+      url: false
+    
+    - desc: (06/2024) One paper accepted to <strong>CMPB!</strong>
+      url: https://www.sciencedirect.com/science/article/pii/S0169260724003316
+    
+    - desc: (06/2024) One paper accepted to <strong>MICCAI 2024!</strong>
+      url: https://link.springer.com/chapter/10.1007/978-3-031-72069-7_3
+
+## note: 
+#  use site.path in your templates to make it work for both protocols e.g. http and https
+#  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
+path: '.'
+url:  'https://junmokwon.github.io/'
+
+
+########
+# more settings
+
+markdown: kramdown
+
+sass:
+  sass_dir: css
+  style:    expanded
+
+permalink: /:title.html
+
+exclude:
+- README.md
+
+
+safe: true
+lsi: false
+

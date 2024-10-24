@@ -1,0 +1,32 @@
+---
+layout: default
+title: Home
+---
+
+<div style="clear: both;">
+  <td width=40%>
+    <div style="float: right; margin-left 1em;">
+      <img src="{{ site.profile }}" height="200px" alt="">
+    </div>
+  </td>
+  <td width=60%>
+    <div>
+      <h1>{{ site.title }}</h1>
+      {{ site.desc | markdownify }}
+    </div>
+  </td>
+</div>
+
+<h2>{{ site.research.title }}</h2>
+<p>{{ site.research.desc }}</p>
+
+{% if site.news.entries.size > 0 %}
+<h2>{{ site.news.title }}</h2>
+<ul>
+  {% for entry in site.news.entries %}
+    <li>
+      {{ entry.desc }}<strong>{% if entry.url %} <a href="{{ entry.url }}">[Link]</a>{% else %} [Link to be updated soon]{% endif %}</strong>
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
