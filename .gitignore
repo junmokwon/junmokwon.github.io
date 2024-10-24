@@ -1,0 +1,6 @@
+_site/
+.jekyll-cache/
+_layouts/post.html
+_posts/
+Gemfile
+Gemfile.lock
