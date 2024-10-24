@@ -1,0 +1,117 @@
+###########
+# site.title, site.url, site.author.name
+
+title:   'Junmo Kwon, Ph.D.'
+author:
+  name:  'Junmo Kwon'
+profile: './assets/images/jmkwon.jpg'
+cv: './assets/documents/CV_Junmo_Kwon.pdf?raw=true'
+google-scholar: 'https://scholar.google.com/citations?user=-c-f1CoAAAAJ&hl=en'
+orcid: 'https://orcid.org/0000-0002-2242-1637'
+github: 'https://github.com/junmokwon'
+linkedin: 'https://www.linkedin.com/in/junmo-kwon-8908a7351'
+
+biography:
+  title: 'Biography'
+  desc: >
+    I am a postdoctoral fellow at the [**Medical Image Processing (MIP) Lab**](https://mipskku.wixsite.com/mipl) under the supervision of Prof. [**Hyunjin Park**](https://hyunjinpark.blogspot.com/2010/02/hyunjin-park.html). Previously, I received my Ph.D. from the [**Department of Electronic and Electrical Engineering**](https://ice.skku.edu/) at the [**Sungkyunkwan University**](https://www.skku.edu/), advised by Prof. [**Hyunjin Park**](https://hyunjinpark.blogspot.com/2010/02/hyunjin-park.html).
+
+research:
+  title: 'Research Interest'
+  desc: >
+    My research focuses on integrating machine learning into medical image computing to tackle challenges such as data scarcity and class imbalance. I leverage self-supervised learning techniques, including contrastive and auxiliary learning, to address these issues.
+
+publications:
+  - title: 'Enhancing Cerebral Microbleed Segmentation with Pretrained UNETR++'
+    image: './assets/images/bibm24_cmb.png'
+    authors: >
+      **Junmo Kwon**{: class="jmkwon"}, Sang Won Seo and Hyunjin Park
+    in: 'IEEE International Conference on Bioinformatics and Biomedicine (BIBM), 2024.'
+    ieee: true
+    top: true
+    oral: true
+    paper-url: https://ieeexplore.ieee.org/document/10822393
+    code-url: https://github.com/junmokwon/UNETRppCMBSeg
+    keywords:
+      - Cerebral Microbleeds
+      - Semantic Segmentation
+      - UNETR++
+    
+  - title: 'Leveraging Segmentation-Guided Spatial Feature Embedding for Overall Survival Prediction in Glioblastoma with Multimodal Magnetic Resonance Imaging'
+    image: './assets/images/cmpb24_survival.png'
+    authors: >
+      **Junmo Kwon**{: class="jmkwon"}, Jonghun Kim and Hyunjin Park
+    in: Computer Methods and Programs in Biomedicine, 2024.
+    elsevier: true
+    paper-url: https://www.sciencedirect.com/science/article/pii/S0169260724003316
+    code-url: https://github.com/junmokwon/GlioblastomaOS
+    keywords:
+      - Glioblastoma
+      - Segmentation-Guided Regression
+      - Overall Survival Prediction
+    
+  - title: 'Anatomically-Guided Segmentation of Cerebral Microbleeds in T1-weighted and T2*-weighted MRI'
+    image: './assets/images/miccai24_cmb.png'
+    authors: >
+      **Junmo Kwon**{: class="jmkwon"}, Sang Won Seo and Hyunjin Park
+    in: 'Medical Image Computing and Computer-Assisted Intervention (MICCAI), 2024.'
+    springer: true
+    top: true
+    paper-url: https://link.springer.com/chapter/10.1007/978-3-031-72069-7_3
+    code-url: https://github.com/junmokwon/AnatGuidedCMBSeg
+    open-review: https://papers.miccai.org/miccai-2024/076-Paper2508.html
+    keywords:
+      - Cerebral Microbleeds
+      - Semantic Segmentation
+      - Proxy Tasks
+      - nnU-Net
+
+awards:
+  - title: '2022 Joint SMRA and MICCAI Grand Challenge Award'
+    image: './assets/images/2022_smra_miccai_award.png'
+    awardees: >
+      Jonghun Kim, Inye Na, **Junmo Kwon**{: class="jmkwon"} and Hyunjin Park
+    desc: >
+      Ranked the **First Place**{: class="award"} in the CarOtid vessel wall SegMentation and atherosclerOsis diagnosiS challenge (COSMOS 2022)
+    url: https://vessel-wall-segmentation-2022.grand-challenge.org/results/
+    trophy: true
+    keywords:
+      - 1st Prize
+
+grants:
+  - title: '2025 Sejong Science Fellowship (Domestic Track)'
+    image: './assets/images/msit_nrf_logo.jpg'
+    awardees: >
+      **Principal Investigator:** **Junmo Kwon**{: class="jmkwon"}
+    desc: >
+      Development of a Unified Framework for Cerebral Small Vessel Disease Diagnosis with Missing Modality Adaptation
+    period: >
+      **Period:** Mar. 2025 – Feb. 2030
+    keywords:
+      - Ongoing
+
+## note: 
+#  use site.path in your templates to make it work for both protocols e.g. http and https
+#  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
+path: '.'
+url:  'https://junmokwon.github.io/'
+
+
+########
+# more settings
+
+markdown: kramdown
+
+sass:
+  sass_dir: css
+  style:    expanded
+
+permalink: /:title.html
+
+exclude:
+- README.md
+
+
+safe: true
+lsi: false
+

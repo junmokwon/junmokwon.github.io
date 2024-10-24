@@ -1,0 +1,137 @@
+---
+layout: default
+title: Home
+---
+
+<div id="about" style="clear: both;">
+  <td width=40%>
+    <div style="float: right; margin-left 1em;">
+      <img src="{{ site.profile }}" height="200px" alt="">
+    </div>
+  </td>
+  <td width=60%>
+    <div>
+      <h1>{{ site.title }}</h1>
+      {{ site.biography.desc | markdownify }}
+	  <b>
+	    <a href="{{ site.orcid }}" target="_blank"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i> ORCID</a>
+	    <a href="{{ site.github }}" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a>
+		<a href="{{ site.linkedin }}" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> Linkedin</a>
+		<a href="{{ site.cv }}" target="_blank"><i class="fas fa-fw fa-file-alt" aria-hidden="true"></i> Curriculum Vitae</a>
+		<a href="{{ site.google-scholar }}" target="_blank"><i class="ai ai-google-scholar-square ai" aria-hidden="true"></i> Google Scholar</a>
+	  </b>
+    </div>
+  </td>
+</div>
+
+<h2>{{ site.research.title }}</h2>
+<p>{{ site.research.desc | markdownify }}</p>
+
+<article class='post'>
+  <div id="news">
+    <h2>News</h2>
+	<p><span class="date">02/2025</span> I have been awarded the <b class="top-conference">2025 Sejong Science Fellowship!</b></p>
+    <p><span class="date">10/2024</span> One paper was accepted to <b class="top-conference">BIBM 2024! <a href="https://ieeexplore.ieee.org/document/10822393" target="_blank"><i class="fas fa-fw fa-external-link-alt" aria-hidden="true"></i> Paper</a></b></p>
+    <p><span class="date">10/2024</span> One paper was published in <b>CMPB! <a href="https://www.sciencedirect.com/science/article/pii/S0169260724003316" target="_blank"><i class="fas fa-fw fa-external-link-alt" aria-hidden="true"></i> Paper</a></b></p>
+    <p><span class="date">06/2024</span> One paper was accepted to <b class="top-conference">MICCAI 2024! <a href="https://link.springer.com/chapter/10.1007/978-3-031-72069-7_3" target="_blank"><i class="fas fa-fw fa-external-link-alt" aria-hidden="true"></i> Paper</a></b></p>
+  </div>
+  {% if site.publications.size > 0 %}
+  <div id="publications">
+    <h2>Selected Publications</h2>
+    <p>For a complete list of publications, please refer to <b><a href="{{ site.cv }}" target="_blank"><i class="fas fa-fw fa-file-alt" aria-hidden="true"></i> CV</a></b> or visit <b><a href="{{ site.google-scholar }}" target="_blank"><i class="ai ai-google-scholar-square ai" aria-hidden="true"></i> Google Scholar</a></b> profile.</p>
+    {% for entry in site.publications %}
+    <div class="container">
+      <div class="image">
+        <img src="{{ entry.image }}">
+      </div>
+      <div class="description">
+        <h3>{{ entry.title }}{% if entry.oral %} <b class="spotlight">Oral</b>{% endif %}</h3>
+        <p>{{ entry.authors | markdownify }}</p>
+        <p>{% if entry.top %}<em class="top-conference">{{ entry.in }}</em>{% else %}<em>{{ entry.in }}</em>{% endif %}</p>
+        <p><b>
+		  {% if entry.paper-url %}<a href="{{ entry.paper-url }}" target="_blank">{% endif %}
+		  {% if entry.ieee %}
+		  <i class="ai ai-ieee" aria-hidden="true"></i> Paper
+		  {% elsif entry.springer %}
+		  <i class="ai ai-springer" aria-hidden="true"></i> Paper
+		  {% elsif entry.elsevier %}
+		  <i class="ai ai-elsevier" aria-hidden="true"></i> Paper
+		  {% else %}
+		  <i class="fas fa-fw fa-file-alt" aria-hidden="true"></i> Paper
+		  {% endif %}
+		  {% if entry.paper-url %}</a>{% endif %} 
+		  {% if entry.code-url %}<a href="{{ entry.code-url }}" target="_blank">
+		  <i class="fab fa-fw fa-github" aria-hidden="true"></i> Code</a>{% endif %} 
+		  {% if entry.open-review %}<a href="{{ entry.open-review }}" target="_blank">
+		  <i class="fas fa-fw fa-comments" aria-hidden="true"></i> Review</a>{% endif %}
+		</b></p>
+		{% if entry.keywords.size > 0 %}
+		<div class="keywords">
+		  {% for keyword in entry.keywords %}
+		  <div class="keyword">{{ keyword | markdownify }}</div>
+		  {% endfor %}
+		</div>
+		{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if site.awards.size > 0 %}
+  <div id="awards">
+    <h2>Awards</h2>
+    {% for entry in site.awards %}
+    <div class="container">
+      <div class="image">
+        <img src="{{ entry.image }}">
+      </div>
+      <div class="description">
+        <h3>
+		  {{ entry.title }}
+		  {% if entry.trophy %} <i class="fas fa-fw fa-trophy" aria-hidden="true"></i>{% endif %}
+		</h3>
+        <p>{{ entry.awardees | markdownify }}</p>
+        <p>{{ entry.desc | markdownify }}</p>
+        {% if entry.url %}
+		<p><b><a href="{{ entry.url }}" target="_blank"><i class="fas fa-fw fa-external-link-alt" aria-hidden="true"></i> Link</a></b></p>
+		{% endif %}
+		{% if entry.keywords.size > 0 %}
+		<div class="keywords">
+		  {% for keyword in entry.keywords %}
+		  <div class="keyword">{{ keyword | markdownify }}</div>
+		  {% endfor %}
+		</div>
+		{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if site.grants.size > 0 %}
+  <div id="grants">
+    <h2>Research Grants</h2>
+    {% for entry in site.grants %}
+    <div class="container">
+      <div class="image">
+        <img src="{{ entry.image }}">
+      </div>
+      <div class="description">
+	    <!-- {% if entry.completed %}<b class="keyword">Completed</b>{% else %}<b class="spotlight">Ongoing</b>{% endif %} -->
+        <h3>{{ entry.title }}</h3>
+        <p>{{ entry.awardees | markdownify }}</p>
+		{% if entry.period %}<p>{{ entry.period | markdownify }}</p>{% endif %}
+        <p>{{ entry.desc | markdownify }}</p>
+        {% if entry.url %}<p><b><a href="{{ entry.url }}" target="_blank"><i class="fas fa-fw fa-external-link-alt" aria-hidden="true"></i> Link</a></b></p>{% endif %}
+		{% if entry.keywords.size > 0 %}
+		<div class="keywords">
+		  {% for keyword in entry.keywords %}
+		  <div class="keyword">{{ keyword | markdownify }}</div>
+		  {% endfor %}
+		</div>
+		{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</article>
