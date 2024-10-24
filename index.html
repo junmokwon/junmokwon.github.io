@@ -1,0 +1,67 @@
+---
+layout: default
+title: Home
+---
+
+<div id="about" style="clear: both;">
+  <td width=40%>
+    <div style="float: right; margin-left 1em;">
+      <img src="{{ site.profile }}" height="200px" alt="">
+    </div>
+  </td>
+  <td width=60%>
+    <div>
+      <h1>{{ site.title }}</h1>
+      {{ site.biography.desc | markdownify }}
+    </div>
+  </td>
+</div>
+
+<h2>{{ site.research.title }}</h2>
+<p>{{ site.research.desc | markdownify }}</p>
+
+<article class='post'>
+  <div id="news">
+    <h2>News</h2>
+    <p><span class="date">10/2024</span> One paper accepted to <b class="top-conference">BIBM 2024! <a href="https://ieeexplore.ieee.org/document/10822393">[Paper]</a></b></p>
+    <p><span class="date">10/2024</span> One paper published in <b>CMPB! <a href="https://www.sciencedirect.com/science/article/pii/S0169260724003316">[Paper]</a></b></p>
+    <p><span class="date">06/2024</span> One paper accepted to <b class="top-conference">MICCAI 2024! <a href="https://link.springer.com/chapter/10.1007/978-3-031-72069-7_3">[Paper]</a></b></p>
+  </div>
+  {% if site.publications.size > 0 %}
+  <div id="publications">
+    <h2>Selected Publications</h2>
+    <p>For a complete list of publications, please refer to <b><a href="{{ site.cv }}">CV</a></b> or visit <b><a href="{{ site.google-scholar }}">Google Scholar</a></b> profile.</p>
+    {% for entry in site.publications %}
+    <div class="container">
+      <div class="image">
+        <img src="{{ entry.image }}">
+      </div>
+      <div class="description">
+        <h3>{{ entry.title }}{% if entry.oral %} <em class="top-conference">(Oral)</em>{% endif %}</h3>
+        <p>{{ entry.authors | markdownify }}</p>
+        <p>{% if entry.top %}<em class="top-conference">{{ entry.in }}</em>{% else %}<em>{{ entry.in }}</em>{% endif %}</p>
+        <p><b>{% if entry.paper-url %}<a href="{{ entry.paper-url }}">[Paper]</a>{% else %}[Paper]{% endif %}   {% if entry.code-url %}<a href="{{ entry.code-url }}">[Code]</a>{% endif %}</b></p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if site.awards.size > 0 %}
+  <div id="awards">
+    <h2>Awards</h2>
+    {% for entry in site.awards %}
+    <div class="container">
+      <div class="image">
+        <img src="{{ entry.image }}">
+      </div>
+      <div class="description">
+        <h3>{{ entry.title }}</h3>
+        <p>{{ entry.awardees | markdownify }}</p>
+        <p>{{ entry.desc | markdownify }}</p>
+        {% if entry.url %}<p><b><a href="{{ entry.url }}">[Link]</a></b></p>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</article>
